@@ -1,7 +1,6 @@
-#include <stdio.h>
 #include "aritmetica.h"
 
-int main(){
+void mdc_estendido (mpz_t g, mpz_t x, mpz_t y, const mpz_t a, const mpz_t b){
 	mpz_t r;
 	mpz_set (r, a);
 	mpz_t r1;
@@ -49,5 +48,10 @@ int main(){
 	mpz_add (aux, aux, aux2);
 
 	if (mpz_cmp (aux, g) == 0)
-		printf("Correto\n");0
+		printf("Correto\n");
+
 }
+
+//https://www.geeksforgeeks.org/euclidean-algorithms-basic-and-extended/
+//https://pt.wikipedia.org/wiki/Algoritmo_de_Euclides_estendido
+
