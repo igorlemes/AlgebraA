@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "aritmetica.h"
+#include "primalidade.h"
 
 int main(){
 	mpz_t b;
