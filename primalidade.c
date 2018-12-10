@@ -21,8 +21,8 @@ int talvez_primo(const mpz_t a, const mpz_t n, const mpz_t n1, unsigned int t, c
 	if( mpz_cmp_ui (r, 1) == 0 || mpz_cmp (r, n1) == 0 ){
 		return 1;
 	} else {
+		mpz_set_ui (q1, 2);
 		while (mpz_cmp_ui (r, 1) == 0 || mpz_cmp (r, n1) == 0){
-			mpz_set_ui (q1, 2);
 			exp_binaria (r, r, q1, n);
 		}
 	}
@@ -63,9 +63,9 @@ int provavelmente_primo(const mpz_t n, unsigned int iter, gmp_randstate_t rnd){
 		if(!talvez_primo(r, n, n1, t, q))
 			return 0;
 	}
-
 	return 1;
 }
+
 void numero_aleatorio(mpz_t r, const mpz_t n, gmp_randstate_t rnd){
 	mp_bitcnt_t num_bits = mpz_sizeinbase(n, 2);
 	do {
